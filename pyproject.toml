@@ -8,7 +8,7 @@ readme = "README.md"
 packages = [{include = "knowledge_gpt"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 streamlit = "^1.17.0"
 langchain = "0.0.71"
 cohere = "^3.2.1"
