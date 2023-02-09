@@ -7,7 +7,7 @@ from langchain.llms import OpenAI
 from langchain.docstore.document import Document
 from langchain.vectorstores import FAISS, VectorStore
 import docx2txt
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Union
 import re
 from io import BytesIO
 import streamlit as st
@@ -51,7 +51,7 @@ def parse_txt(file: BytesIO) -> str:
 
 
 @st.cache(allow_output_mutation=True)
-def text_to_docs(text: str | List[str]) -> List[Document]:
+def text_to_docs(text: Union[str, List[str]]) -> List[Document]:
     """Converts a string or list of strings to a list of Documents
     with metadata."""
     if isinstance(text, str):
